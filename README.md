@@ -1,7 +1,7 @@
 # Bootcamp 1.0 - Backend Development Track
 ![Backend developement track](https://img.shields.io/badge/Backend%20Development%20Track-Bootcamp%201.0-brightgreen)
 
-
+![gdsc backend development track](./gdsc_backend.jpg)
 
 This is a repository for the first bootcamp of the backend development track. It contains the code written by mentors of the bootcamp.
 
