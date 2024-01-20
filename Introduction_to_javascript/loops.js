@@ -15,15 +15,20 @@ for (let i = 0; i < basket_length; i = i + 1) {
 }
 
 console.log()
+
 console.log("Reversed")
 console.log("=====================")
 for (let i = basket_length - 1; i >= 0; i = i - 1) {
     console.log(`Item at position ${i} is ${basket[i]}`)
 }
 
+console.log()
+
 console.log("Using array methods")
 console.log("=====================")
 console.log(basket.reverse())
+
+console.log()
 
 console.log("Using array methods with loop")
 console.log("=====================")

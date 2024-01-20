@@ -20,7 +20,7 @@ Click any of this links to learn everything you need to know about JavaScript:
 - [JavaScript Cheat Sheet](https://www.javascripttutorial.net/javascript-cheat-sheet/)
 - [JavaScript Books](https://www.javascripttutorial.net/javascript-books/)
 
-To get an overview of jaavscript, keep scrolling... !
+To get an overview of javaScript, keep scrolling... !
 ## Scopes in JavaScript
 Scoping refers to the visibility of variables. In JavaScript, variables can be declared either inside or outside of a function, which determines their scope.
 
