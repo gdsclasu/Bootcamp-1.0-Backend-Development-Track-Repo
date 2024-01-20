@@ -9,6 +9,7 @@ function myFunction() {
     console.log(`Hello from function: ${firstName}`)
 }
 
-console.log(`Hello ${firstName}`)
+console.log(`Hello ${firstName}`) // Ahmad
 
-myFunction()
+// function is called
+myFunction() // Sheu

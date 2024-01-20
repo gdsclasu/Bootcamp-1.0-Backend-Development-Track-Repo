@@ -5,7 +5,3 @@ console.log()
 console.log(basket.includes("pineapple"))
 console.log()
 console.log(basket.reverse())
-console.log()
-
-// var Name = "Adetokunbo"
-// console.log(Name.re)
