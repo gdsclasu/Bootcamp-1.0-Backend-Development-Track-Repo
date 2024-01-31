@@ -398,3 +398,849 @@ Objects are used to store keyed collections of various data and more complex ent
 
     console.log(person1 === person2); // false
     ```
+
+## Classes in JavaScript
+Classes are used to create objects. In JavaScript, classes are declared using the `class` keyword and can contain properties and methods. Here are some key features of classes in JavaScript:
+
+
+
+### Inheritance
+Inheritance is the process by which one class inherits the properties and methods of another class. In JavaScript, inheritance is implemented using the `extends` keyword. Here are some key features of inheritance in JavaScript:
+- __Superclass__: a superclass is the class from which another class inherits properties and methods.
+    ```
+    class Person {
+        constructor(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+
+        getFullName() {
+            return `${this.firstName} ${this.lastName}`;
+        }
+    }
+
+    class Student extends Person {
+        constructor(firstName, lastName, grade) {
+            super(firstName, lastName);
+            this.grade = grade;
+        }
+    }
+
+    let student = new Student('John', 'Doe', 90);
+    console.log(student.getFullName()); // John Doe
+    ```
+- __Subclass__: a subclass is the class that inherits properties and methods from another class.
+    ```
+    class Person {
+        constructor(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+
+        getFullName() {
+            return `${this.firstName} ${this.lastName}`;
+        }
+    }
+
+    class Student extends Person {
+        constructor(firstName, lastName, grade) {
+            super(firstName, lastName);
+            this.grade = grade;
+        }
+    }
+
+    let student = new Student('John', 'Doe', 90);
+
+    console.log(student instanceof Person); // true
+    console.log(student instanceof Student); // true
+    ```
+- __Method Overriding__: method overriding is the process of replacing a method inherited from a superclass.
+    ```
+    class Person {
+        constructor(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+
+        getFullName() {
+            return `${this.firstName} ${this.lastName}`;
+        }
+    }
+
+    class Student extends Person {
+        constructor(firstName, lastName, grade) {
+            super(firstName, lastName);
+            this.grade = grade;
+        }
+
+        getFullName() {
+            return `${this.firstName} ${this.lastName} (${this.grade})`;
+        }
+    }
+
+    let student = new Student('John', 'Doe', 90);
+    console.log(student.getFullName()); // John Doe (90)
+    ```
+- __Superclass Constructor__: a superclass constructor is a constructor that is invoked when a subclass is instantiated.
+    ```
+    class Person {
+        constructor(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+    }
+
+    class Student extends Person {
+        constructor(firstName, lastName, grade) {
+            super(firstName, lastName);
+            this.grade = grade;
+        }
+    }
+
+    let student = new Student('John', 'Doe', 90);
+    console.log(student); // Student { firstName: 'John', lastName: 'Doe', grade: 90 }
+    ```
+- __Subclass Constructor__: a subclass constructor is a constructor that invokes a superclass constructor using the `super` keyword.
+    ```
+    class Person {
+        constructor(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+    }
+
+    class Student extends Person {
+        constructor(firstName, lastName, grade) {
+            super(firstName, lastName);
+            this.grade = grade;
+        }
+    }
+
+    let student = new Student('John', 'Doe', 90);
+    console.log(student); // Student { firstName: 'John', lastName: 'Doe', grade: 90 }
+    ```
+- __Superclass Static Methods__: a superclass static method is a static method that is inherited by a subclass.
+    ```
+    class Person {
+        constructor(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+
+        static getFullName(firstName, lastName) {
+            return `${firstName} ${lastName}`;
+        }
+    }
+
+    class Student extends Person {
+        constructor(firstName, lastName, grade) {
+            super(firstName, lastName);
+            this.grade = grade;
+        }
+    }
+
+    let student = new Student('John', 'Doe', 90);
+    console.log(Student.getFullName('John', 'Doe')); // John Doe
+    ```
+- __Subclass Static Methods__: a subclass static method is a static method that is defined in a subclass.
+    ```
+    class Person {
+        constructor(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+
+        static getFullName(firstName, lastName) {
+            return `${firstName} ${lastName}`;
+        }
+    }
+
+    class Student extends Person {
+        constructor(firstName, lastName, grade) {
+            super(firstName, lastName);
+            this.grade = grade;
+        }
+
+        static getGrade(grade) {
+            return grade;
+        }
+    }
+
+    let student = new Student('John', 'Doe', 90);
+    console.log(Student.getGrade(90)); // 90
+    ```
+- __Superclass Instance Methods__: a superclass instance method is an instance method that is inherited by a subclass.
+    ```
+    class Person {
+        constructor(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+
+        getFullName() {
+            return `${this.firstName} ${this.lastName}`;
+        }
+    }
+
+    class Student extends Person {
+        constructor(firstName, lastName, grade) {
+            super(firstName, lastName);
+            this.grade = grade;
+        }
+    }
+
+    let student = new Student('John', 'Doe', 90);
+    console.log(student.getFullName()); // John Doe
+    ```
+- __Subclass Instance Methods__: a subclass instance method is an instance method that is defined in a subclass.
+    ```
+    class Person {
+        constructor(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+
+        getFullName() {
+            return `${this.firstName} ${this.lastName}`;
+        }
+    }
+
+    class Student extends Person {
+        constructor(firstName, lastName, grade) {
+            super(firstName, lastName);
+            this.grade = grade;
+        }
+
+        getGrade() {
+            return this.grade;
+        }
+    }
+
+    let student = new Student('John', 'Doe', 90);
+    console.log(student.getGrade()); // 90
+    ```
+- __Superclass Getters and Setters__: a superclass getter is a getter that is inherited by a subclass.
+    ```
+    class Person {
+        constructor(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+
+        get fullName() {
+            return `${this.firstName} ${this.lastName}`;
+        }
+
+        set fullName(fullName) {
+            let name = fullName.split(' ');
+            this.firstName = name[0];
+            this.lastName = name[1];
+        }
+    }
+
+    class Student extends Person {
+        constructor(firstName, lastName, grade) {
+            super(firstName, lastName);
+            this.grade = grade;
+        }
+    }
+
+    let student = new Student('John', 'Doe', 90);
+    console.log(student.fullName); // John Doe
+    student.fullName = 'Mary Smith';
+    console.log(student.fullName); // Mary Smith
+    ```
+- __Subclass Getters and Setters__: a subclass getter is a getter that is defined in a subclass.
+    ```
+    class Person {
+        constructor(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+
+        get fullName() {
+            return `${this.firstName} ${this.lastName}`;
+        }
+
+        set fullName(fullName) {
+            let name = fullName.split(' ');
+            this.firstName = name[0];
+            this.lastName = name[1];
+        }
+    }
+
+    class Student extends Person {
+        constructor(firstName, lastName, grade) {
+            super(firstName, lastName);
+            this.grade = grade;
+        }
+
+        get grade() {
+            return this.grade;
+        }
+
+        set grade(grade) {
+            this.grade = grade;
+        }
+    }
+
+    let student = new Student('John', 'Doe', 90);
+    console.log(student.grade); // 90
+    student.grade = 95;
+    console.log(student.grade); // 95
+    ```
+
+## Error Handling in JavaScript
+Error handling is the process of catching errors and preventing program execution from terminating abnormally. In JavaScript, errors are represented by objects that contain a name and message property. Here are some key features of error handling in JavaScript:
+- __Error__: an error is an object that contains a name and message property.
+    ```
+    let error = new Error('Something went wrong.');
+    console.log(error.name); // Error
+    console.log(error.message); // Something went wrong.
+    ```
+- __Error Types__: there are seven types of errors in JavaScript.
+    - __Error__: generic error.
+    - __EvalError__: error in eval() function.
+    - __RangeError__: error when a numeric variable exceeds its allowed range.
+    - __ReferenceError__: error when an invalid reference is used.
+    - __SyntaxError__: error when a syntax error occurs.
+    - __TypeError__: error when a variable or parameter is not of a valid type.
+    - __URIError__: error when encodeURI() or decodeURI() are used incorrectly.
+- __Throw Statement__: the throw statement is used to throw an error.
+    ```
+    let x = 10;
+    if (x > 5) { throw new Error('x cannot be greater than 5.'); }
+    ```
+- __Try...Catch Statement__: the try...catch statement is used to catch errors.
+    ```
+    try {
+        let x = 10;
+        if (x > 5) { throw new Error('x cannot be greater than 5.'); }
+    } catch (error) {
+        console.log(error.name); // Error
+        console.log(error.message); // x cannot be greater than 5.
+    }
+    ```
+- __Try...Catch...Finally Statement__: the try...catch...finally statement is used to catch errors and execute code after try and catch regardless of the result.
+    ```
+    try {
+        let x = 10;
+        if (x > 5) { throw new Error('x cannot be greater than 5.'); }
+    } catch (error) {
+        console.log(error.name); // Error
+        console.log(error.message); // x cannot be greater than 5.
+    } finally {
+        console.log('This code will always execute.');
+    }
+    ```
+- __Custom Errors__: custom errors can be created by extending the Error class.
+    ```
+    class ValidationError extends Error {
+        constructor(message) {
+            super(message);
+            this.name = 'ValidationError';
+        }
+    }
+
+    let error = new ValidationError('Something went wrong.');
+    console.log(error.name); // ValidationError
+    console.log(error.message); // Something went wrong.
+    ```
+- __Error Handling Best Practices__: here are some best practices for error handling in JavaScript:
+    - Use descriptive error messages.
+    - Throw errors early.
+    - Use try...catch...finally statements.
+    - Use custom errors.
+    - Use error handling middleware.
+
+## Promises in JavaScript
+Promises are used to handle asynchronous operations in JavaScript. A promise is an object that represents the eventual completion or failure of an asynchronous operation. Here are some key features of promises in JavaScript:
+- __Promise States__: a promise can be in one of three states: pending, fulfilled, or rejected.
+    - __Pending__: initial state, neither fulfilled nor rejected.
+    - __Fulfilled__: operation completed successfully.
+    - __Rejected__: operation failed.
+- __Promise Chaining__: promise chaining is the process of chaining multiple promises together.
+    ```
+    let promise = new Promise((resolve, reject) => {
+        setTimeout(() => resolve(1), 2000);
+    });
+
+    promise.then(result => {
+        console.log(result); // 1
+        return result * 2;
+    }).then(result => {
+        console.log(result); // 2
+        return result * 2;
+    }).then(result => {
+        console.log(result); // 4
+        return result * 2;
+    });
+    ```
+
+## Async/Await in JavaScript
+Async/await is used to handle asynchronous operations in JavaScript. Async/await is syntactic sugar for promises and makes asynchronous code look and behave like synchronous code. Here are some key features of async/await in JavaScript:
+- __Async Function__: an async function is a function that returns a promise.
+    ```
+    async function add(x, y) {
+        return x + y;
+    }
+
+    add(5, 10).then(result => console.log(result)); // 15
+    ```
+- __Await Operator__: the await operator is used to wait for a promise to resolve or reject.
+    ```
+    async function add(x, y) {
+        return x + y;
+    }
+
+    async function calculate() {
+        let result = await add(5, 10);
+        console.log(result); // 15
+    }
+
+    calculate();
+    ```
+- __Async/Await Error Handling__: async/await error handling is the process of handling errors in async/await functions.
+    ```
+    async function add(x, y) {
+        return x + y;
+    }
+
+    async function calculate() {
+        try {
+            let result = await add(5, 10);
+            console.log(result); // 15
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    calculate();
+    ```
+- __Async/Await Best Practices__: here are some best practices for async/await in JavaScript:
+    - Use descriptive variable names.
+    - Use try...catch statements.
+    - Use async/await instead of promises.
+    - Use async/await instead of callbacks.
+
+## Modules in JavaScript
+Modules are used to organize code into logical units. In JavaScript, modules are declared using the `export` and `import` keywords. Here are some key features of modules in JavaScript:
+- __Module Declaration__: a module is declared using the `export` keyword.
+    ```
+    // math.js
+    export function add(x, y) {
+        return x + y;
+    }
+
+    export function subtract(x, y) {
+        return x - y;
+    }
+
+    // app.js
+    import { add, subtract } from './math.js';
+
+    console.log(add(5, 10)); // 15
+    console.log(subtract(5, 10)); // -5
+    ```
+- __Default Exports__: a default export is used to export a single object, function, or primitive from a module.
+    ```
+    // math.js
+    export default function add(x, y) {
+        return x + y;
+    }
+
+    // app.js
+    import add from './math.js';
+
+    console.log(add(5, 10)); // 15
+    ```
+- __Module Exports__: a module export is used to export multiple objects, functions, or primitives from a module.
+    ```
+    // math.js
+    function add(x, y) {
+        return x + y;
+    }
+
+    function subtract(x, y) {
+        return x - y;
+    }
+
+    export { add, subtract };
+
+    // app.js
+    import * as math from './math.js';
+
+    console.log(math.add(5, 10)); // 15
+    console.log(math.subtract(5, 10)); // -5
+    ```
+- __Module Imports__: a module import is used to import multiple objects, functions, or primitives from a module.
+    ```
+    // math.js
+    function add(x, y) {
+        return x + y;
+    }
+
+    function subtract(x, y) {
+        return x - y;
+    }
+
+    export { add, subtract };
+
+    // app.js
+    import { add, subtract } from './math.js';
+
+    console.log(add(5, 10)); // 15
+    console.log(subtract(5, 10)); // -5
+    ```
+- __Module Renaming__: a module can be renamed using the `as` keyword.
+    ```
+    // math.js
+    function add(x, y) {
+        return x + y;
+    }
+
+    function subtract(x, y) {
+        return x - y;
+    }
+
+    export { add, subtract };
+
+    // app.js
+    import { add as sum, subtract as difference } from './math.js';
+
+    console.log(sum(5, 10)); // 15
+    console.log(difference(5, 10)); // -5
+    ```
+- __Module Re-exports__: a module can be re-exported using the `export` keyword.
+    ```
+    // math.js
+    function add(x, y) {
+        return x + y;
+    }
+
+    function subtract(x, y) {
+        return x - y;
+    }
+
+    export { add, subtract };
+
+    // app.js
+    export { add, subtract } from './math.js';
+
+    // index.js
+    import { add, subtract } from './app.js';
+
+    console.log(add(5, 10)); // 15
+    console.log(subtract(5, 10)); // -5
+    ```
+- __Module Namespace Imports__: a module namespace import is used to import all exports from a module.
+    ```
+    // math.js
+    function add(x, y) {
+        return x + y;
+    }
+
+    function subtract(x, y) {
+        return x - y;
+    }
+
+    export { add, subtract };
+
+    // app.js
+    import * as math from './math.js';
+
+    console.log(math.add(5, 10)); // 15
+    console.log(math.subtract(5, 10)); // -5
+    ```
+- __Module Namespace Exports__: a module namespace export is used to export all exports from a module.
+    ```
+    // math.js
+    function add(x, y) {
+        return x + y;
+    }
+
+    function subtract(x, y) {
+        return x - y;
+    }
+
+    export { add, subtract };
+
+    // app.js
+    export * as math from './math.js';
+
+    // index.js
+    import { math } from './app.js';
+
+    console.log(math.add(5, 10)); // 15
+    console.log(math.subtract(5, 10)); // -5
+    ```
+- __Module Default Exports__: a module default export is used to export a single object, function, or primitive from a module.
+    ```
+    // math.js
+    export default function add(x, y) {
+        return x + y;
+    }
+
+    // app.js
+    import add from './math.js';
+
+    console.log(add(5, 10)); // 15
+    ```
+- __Module Default Imports__: a module default import is used to import a single object, function, or primitive from a module.
+    ```
+    // math.js
+    export default function add(x, y) {
+        return x + y;
+    }
+
+    // app.js
+    import add from './math.js';
+
+    console.log(add(5, 10)); // 15
+    ```
+- __Module Default Exports and Imports__: a module default export is used to export a single object, function, or primitive from a module and a module default import is used to import a single object, function, or primitive from a module.
+    ```
+    // math.js
+    export default function add(x, y) {
+        return x + y;
+    }
+
+    // app.js
+    import add from './math.js';
+
+    console.log(add(5, 10)); // 15
+    ```
+- __Module Default Exports and Named Exports__: a module default export is used to export a single object, function, or primitive from a module and a module named export is used to export multiple objects, functions, or primitives from a module.
+    ```
+    // math.js
+    export default function add(x, y) {
+        return x + y;
+    }
+
+    export function subtract(x, y) {
+        return x - y;
+    }
+
+    // app.js
+    import add, { subtract } from './math.js';
+
+    console.log(add(5, 10)); // 15
+    console.log(subtract(5, 10)); // -5
+    ```
+- __Module Named Exports and Default Exports__: a module named export is used to export multiple objects, functions, or primitives from a module and a module default export is used to export a single object, function, or primitive from a module.
+    ```
+    // math.js
+    export default function add(x, y) {
+        return x + y;
+    }
+
+    export function subtract(x, y) {
+        return x - y;
+    }
+
+    // app.js
+    import { default as add, subtract } from './math.js';
+
+    console.log(add(5, 10)); // 15
+    console.log(subtract(5, 10)); // -5
+    ```
+- __Module Named Exports and Namespace Exports__: a module named export is used to export multiple objects, functions, or primitives from a module and a module namespace export is used to export all exports from a module.
+    ```
+    // math.js
+    export function add(x, y) {
+        return x + y;
+    }
+
+    export function subtract(x, y) {
+        return x - y;
+    }
+
+    // app.js
+    export * as math from './math.js';
+
+    // index.js
+    import { math } from './app.js';
+
+    console.log(math.add(5, 10)); // 15
+    console.log(math.subtract(5, 10)); // -5
+    ```
+- __Module Namespace Exports and Named Exports__: a module namespace export is used to export all exports from a module and a module named export is used to export multiple objects, functions, or primitives from a module.
+    ```
+    // math.js
+    export function add(x, y) {
+        return x + y;
+    }
+
+    export function subtract(x, y) {
+        return x - y;
+    }
+
+    // app.js
+    import * as math from './math.js';
+
+    console.log(math.add(5, 10)); // 15
+    console.log(math.subtract(5, 10)); // -5
+    ```
+- __Module Namespace Exports and Default Exports__: a module namespace export is used to export all exports from a module and a module default export is used to export a single object, function, or primitive from a module.
+    ```
+    // math.js
+    export default function add(x, y) {
+        return x + y;
+    }
+
+    export function subtract(x, y) {
+        return x - y;
+    }
+
+    // app.js
+    export * as math from './math.js';
+
+    // index.js
+    import { math } from './app.js';
+
+    console.log(math.add(5, 10)); // 15
+    console.log(math.subtract(5, 10)); // -5
+    ```
+- __Module Namespace Exports and Namespace Imports__: a module namespace export is used to export all exports from a module and a module namespace import is used to import all exports from a module.
+    ```
+    // math.js
+    export function add(x, y) {
+        return x + y;
+    }
+
+    export function subtract(x, y) {
+        return x - y;
+    }
+
+    // app.js
+    export * as math from './math.js';
+
+    // index.js
+    import * as math from './app.js';
+
+    console.log(math.add(5, 10)); // 15
+    console.log(math.subtract(5, 10)); // -5
+    ```
+
+## JavaScript Standard Library
+The JavaScript standard library is a collection of built-in objects, functions, and methods that can be used to perform common tasks. Here are some key features of the JavaScript standard library:
+- __Global Objects__: global objects are objects that are available in all JavaScript environments.
+    - __Infinity__: represents infinity.
+    - __NaN__: represents not-a-number.
+    - __undefined__: represents undefined.
+    - __null__: represents null.
+    - __globalThis__: represents the global this value.
+    - __Object__: represents an object.
+    - __Function__: represents a function.
+    - __Boolean__: represents a boolean.
+    - __Symbol__: represents a symbol.
+    - __Error__: represents an error.
+    - __EvalError__: represents an error that occurs regarding the global eval() function.
+    - __RangeError__: represents an error that occurs when a numeric variable exceeds its allowed range.
+    - __ReferenceError__: represents an error that occurs when an invalid reference is used.
+    - __SyntaxError__: represents an error that occurs when a syntax error occurs.
+    - __TypeError__: represents an error that occurs when a variable or parameter is not of a valid type.
+    - __URIError__: represents an error that occurs when encodeURI() or decodeURI() are used incorrectly.
+    - __Number__: represents a number.
+    - __BigInt__: represents an integer with arbitrary precision.
+    - __Math__: represents a mathematical object.
+    - __Date__: represents a date.
+    - __String__: represents a string.
+    - __RegExp__: represents a regular expression.
+    - __Array__: represents an array.
+    - __Int8Array__: represents an array of 8-bit signed integers.
+    - __Uint8Array__: represents an array of 8-bit unsigned integers.
+    - __Uint8ClampedArray__: represents an array of 8-bit unsigned integers clamped to 0-255.
+    - __Int16Array__: represents an array of 16-bit signed integers.
+    - __Uint16Array__: represents an array of 16-bit unsigned integers.
+    - __Int32Array__: represents an array of 32-bit signed integers.
+    - __Uint32Array__: represents an array of 32-bit unsigned integers.
+    - __Float32Array__: represents an array of 32-bit floating point numbers.
+    - __Float64Array__: represents an array of 64-bit floating point numbers.
+    - __BigInt64Array__: represents an array of 64-bit signed integers.
+    - __BigUint64Array__: represents an array of 64-bit unsigned integers.
+    - __Map__: represents a map.
+    - __Set__: represents a set.
+    - __JSON__: represents a JSON object.
+    - __Promise__: represents a promise.
+    - __AsyncFunction__: represents an asynchronous function.
+
+## JavaScript Web APIs
+The JavaScript Web APIs are a collection of APIs that can be used to perform common tasks. Here are some key features of the JavaScript Web APIs:
+- __DOM__: the DOM API is used to manipulate the DOM.
+    - __Document__: represents a document.
+    - __Element__: represents an element.
+    - __Node__: represents a node.
+    - __Event__: represents an event.
+    - __Window__: represents a window.
+    - __Location__: represents a location.
+    - __History__: represents a history.
+    - __Navigator__: represents a navigator.
+    - __Screen__: represents a screen.
+    - __Storage__: represents a storage.
+    - __XMLHttpRequest__: represents an XMLHttpRequest.
+    - __Fetch__: represents a fetch.
+    - __Request__: represents a request.
+    - __Response__: represents a response.
+    - __Headers__: represents headers.
+    - __URL__: represents a URL.
+    - __URLSearchParams__: represents URL search parameters.
+    - __AbortController__: represents an abort controller.
+    - __AbortSignal__: represents an abort signal.
+    - __File__: represents a file.
+    - __FileList__: represents a list of files.
+    - __FileReader__: represents a file reader.
+    - __Blob__: represents a blob.
+    - __FormData__: represents form data.
+    - __Image__: represents an image.
+    - __Audio__: represents an audio.
+    - __Video__: represents a video.
+    - __Canvas__: represents a canvas.
+    - __WebGLRenderingContext__: represents a WebGL rendering context.
+    - __WebGL2RenderingContext__: represents a WebGL 2 rendering context.
+    - __WebGLActiveInfo__: represents WebGL active info.
+    - __WebGLBuffer__: represents a WebGL buffer.
+    - __WebGLFramebuffer__: represents a WebGL framebuffer.
+    - __WebGLProgram__: represents a WebGL program.
+    - __WebGLQuery__: represents a WebGL query.
+    - __WebGLRenderbuffer__: represents a WebGL renderbuffer.
+    - __WebGLSampler__: represents a WebGL sampler.
+    - __WebGLShader__: represents a WebGL shader.
+    - __WebGLShaderPrecisionFormat__: represents a WebGL shader precision format.
+    - __WebGLSync__: represents a WebGL sync.
+    - __WebGLTexture__: represents a WebGL texture.
+    - __WebGLTransformFeedback__: represents a WebGL transform feedback.
+    - __WebGLUniformLocation__: represents a WebGL uniform location.
+    - __WebGLVertexArrayObject__: represents a WebGL vertex array object.
+    - __WebGL2RenderingContextBase__: represents a WebGL 2 rendering context base.
+
+## JavaScript Browser APIs
+The JavaScript Browser APIs are a collection of APIs that can be used to perform common tasks. Here are some key features of the JavaScript Browser APIs:
+- __Window__: the Window API is used to manipulate the browser window.
+    - __window.alert()__: displays an alert box.
+    - __window.confirm()__: displays a dialog box with a specified message and an OK and a Cancel button.
+    - __window.prompt()__: displays a dialog box that prompts the visitor for input.
+    - __window.open()__: opens a new browser window.
+    - __window.close()__: closes the current browser window.
+    - __window.moveTo()__: moves a window to the specified coordinates.
+    - __window.resizeTo()__: resizes a window to the specified width and height.
+    - __window.resizeBy()__: resizes a window by the specified amount.
+    - __window.scrollBy()__: scrolls the document by the specified amount.
+    - __window.scrollTo()__: scrolls the document to the specified coordinates.
+    - __window.getComputedStyle()__: returns the computed style of an element.
+    - __window.matchMedia()__: returns a MediaQueryList object representing the specified CSS media query string.
+    - __window.requestAnimationFrame()__: requests that the browser call a specified function to update an animation before the next repaint.
+    - __window.cancelAnimationFrame()__: cancels an animation frame request previously scheduled through a call to window.requestAnimationFrame().
+    - __window.postMessage()__: safely enables cross-origin communication between Window objects.
+    - __window.print()__: prints the contents of the current window.
+    - __window.stop()__: stops the loading of the current document.
+    - __window.focus()__: sets focus on the current window.
+    - __window.blur()__: removes focus from the current window.
+    - __window.getSelection()__: returns a Selection object representing the range of text selected by the user.
+    - __window.find()__: searches for a given string in a document.
+    - __window.getSelection()__: returns a Selection object representing the range of text selected by the user.
+    - __window.getSelection()__: returns a Selection object representing the range of text selected by the user.
+    - __window.getSelection()__: returns a Selection object representing the range of text selected by the user.
+    - __window.getSelection()__: returns a Selection object representing the range of text selected by the user.
+    - __window.getSelection()__: returns a Selection object representing the range of text selected by the user.
+    - __window.getSelection()__: returns a Selection object representing the range of text selected by the user.

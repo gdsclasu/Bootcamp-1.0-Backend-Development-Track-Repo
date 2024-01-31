@@ -3,54 +3,54 @@
 // }
 
 // Named functions
-// function sayHello(name) {
-//     console.log(`Hello ${name}`)
-// }
+function sayHello(name) {
+    console.log(`Hello ${name}`)
+}
 
-// // Using arrow functions
-// const greet = name => console.log(`Hello ${name}`)
+// Using arrow functions
+const greet = name => console.log(`Hello ${name}`)
 
 // calling a FUNCTION
 // sayHello(argument1, argument2, ...)
-// sayHello("John")
+sayHello("John")
 
-// greet("Jane")
+greet("Jane")
 
 const values = [-10, -20, 20, 40, 60, 80]
 
-// function getTotal(array) {
-//     let sum = 0
+function getTotal(array) {
+    let sum = 0
 
-//     console.log("Before looping")
-//     console.log("Sum is: " + sum)
+    console.log("Before looping")
+    console.log("Sum is: " + sum)
 
-//     for (let value of array) {
-//         sum += value
-//     }
+    for (let value of array) {
+        sum += value
+    }
 
-//     console.log("After looping")
-//     console.log(`Total sum is: ${sum}`)
-// }
+    console.log("After looping")
+    console.log(`Total sum is: ${sum}`)
+}
 
-// getTotal(values)
+getTotal(values)
 
-// console.log("=====================")
+console.log("=====================")
 
-// const TotalSum = (array) => {
-//     let sum = 0
+const TotalSum = (array) => {
+    let sum = 0
 
-//     console.log("Before looping")
-//     console.log("Sum is: " + sum)
+    console.log("Before looping")
+    console.log("Sum is: " + sum)
 
-//     for (let value of array) {
-//         sum = sum + value
-//     }
+    for (let value of array) {
+        sum = sum + value
+    }
 
-//     console.log("After looping")
-//     console.log(`Total sum is: ${sum}`)
-// }
+    console.log("After looping")
+    console.log(`Total sum is: ${sum}`)
+}
 
-// TotalSum(values)
+TotalSum(values)
 
 function getTotalPos(array) {
     let sum = 0
@@ -81,5 +81,3 @@ function getTotalNeg(array) {
 }
 
 getTotalNeg(values)
-
-// Using functions with cases
