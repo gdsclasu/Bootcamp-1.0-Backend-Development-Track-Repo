@@ -282,3 +282,41 @@ app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
 ```
+
+## How to use authentication in Express/Node.js
+You can use authentication in Express/Node.js to verify the identity of a user. Some of the popular authentication methods that you can use with Express/Node.js are:
+- Basic authentication
+- Token-based authentication (JWT)
+- OAuth
+- Passport.js
+
+Here is an example of how to use basic authentication in Express/Node.js:
+```javascript
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.use((req, res, next) => { // Middleware function for basic authentication
+  const authHeader = req.headers.authorization; // Get the Authorization header
+  if (!authHeader) {
+    res.status(401).send('Unauthorized');
+    return;
+  }
+  const auth = Buffer.from(authHeader.split(' ')[1], 'base64').toString().split(':');
+  const username = auth[0];
+  const password = auth[1];
+  if (username === 'admin' && password === 'password') {
+    next();
+  } else {
+    res.status(401).send('Unauthorized');
+  }
+});
+
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+app.listen(port, () => {
+  console.log(`Server listening at http://localhost:${port}`);
+});
+```
