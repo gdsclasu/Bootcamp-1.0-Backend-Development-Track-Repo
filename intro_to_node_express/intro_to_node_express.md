@@ -35,6 +35,19 @@ We will cover the following topics:
     - MongoDB
     - MySQL
 
+You can use the resources below to learn more about Node.js and Express.js:
+- [Node.js official website](https://nodejs.org/)
+- [Express.js official website](https://expressjs.com/)
+- [mongodb official website](https://www.mongodb.com/)
+- [MySQL official website](https://www.mysql.com/)
+- [Node.js and Express.js tutorial](https://www.tutorialspoint.com/nodejs/index.htm)
+- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs) ![recommended](https://img.shields.io/badge/recommended-true-green)
+
+To learn more about using packages with Node.js and Express.js, you can use the following resources:
+- [npm official website](https://www.npmjs.com/) ![recommended](https://img.shields.io/badge/recommended-true-green)
+- [yarn official website](https://yarnpkg.com/)
+
+
 ## What is Node.js?
 Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It is designed to build scalable network applications. It uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
 
