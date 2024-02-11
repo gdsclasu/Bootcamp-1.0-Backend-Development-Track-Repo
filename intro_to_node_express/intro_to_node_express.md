@@ -97,6 +97,24 @@ app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
 ```
+### Using express.Router
+Here is an example of how to create a simple REST API using `express.Router`:
+```javascript
+const express = require('express');
+const app = express();
+const port = 3000;
+const router = express.Router();
+
+router.get('/', (req, res) => {
+  res.json({ message: 'Hello World!' });
+});
+
+app.use('/api', router);
+
+app.listen(port, () => {
+  console.log(`Server listening at http://localhost:${port}`);
+});
+```
 
 ## How to use middleware in Express/Node.js
 Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle. They can perform the following tasks:
