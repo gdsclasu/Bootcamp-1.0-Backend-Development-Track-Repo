@@ -19,13 +19,13 @@ const encoding = "utf8";
 const content = `Line 1\nLine 2\nLine 3\nLine 4`;
 
 const read_file = async (filename, encoding) => {
-  fs.readFile(filename, encoding, (read_content, error) => {
+  fs.readFile(filename, encoding, (content, error) => {
     if (error) {
       console.log(error);
     }
 
     console.log("File read successfully");
-    console.log(read_content);
+    console.log(content);
   });
 }
 

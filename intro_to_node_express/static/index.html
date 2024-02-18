@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA_Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./css/style.css">
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a href="#" class="header_hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+
+      <a href="#" class="header_logo">
+        <img src="./images/logo.svg" alt="logo">
+      </a>
+
+      <div class="header_desktop_menu">
+        <a href="#">Collections</a>
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <div class="header_CA">
+        <a class="header_CA_cart" id="cart">
+          <img src="./images/icon-cart.svg" alt="cart">
+        </a>
+  
+        <a class="header_CA_avatar">
+          <img src="./images/image-avatar.png" alt="avatar">
+        </a>
+      </div>
+
+      <div class="header_mobile_menu">
+        <a href="#">Collections</a>
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <div class="header_overlay"></div>
+    </nav>
+  </header>
+
+  <section class="main">
+    <div class="main_cart">
+      <div class="main_cart_header">
+        <p> Cart</p>
+      </div>
+      <hr>
+      <div class="main_cart_content">
+        <p>
+          Your Cart is Empty 
+        </p>
+      </div>
+    </div>
+
+    <div class="main_image_mobile">
+      <img class="product" src="./images/image-product-1.jpg" alt="product-1">
+      <img class="product" src="./images/image-product-2.jpg" alt="product-2">
+      <img class="product" src="./images/image-product-3.jpg" alt="product-3">
+      <img class="product" src="./images/image-product-4.jpg" alt="product-4">
+
+      <div class="main_image_mobile_prev prev">
+        <img src="./images/icon-previous.svg">
+      </div>
+      
+      <div class="main_image_mobile_next next">
+        <img src="./images/icon-next.svg">
+      </div>
+    </div>
+
+    <div class="main_image_desktop">
+      <img id="main" src="./images/image-product-1.jpg" alt="product-1">
+      <div class="main_image_desktop_small">
+        <img class="thumbnail" src="./images/image-product-1.jpg" alt="product-1">
+        <img class="thumbnail" src="./images/image-product-2.jpg" alt="product-2">
+        <img class="thumbnail" src="./images/image-product-3.jpg" alt="product-3">
+        <img class="thumbnail" src="./images/image-product-4.jpg" alt="product-4">
+      </div>
+    </div>
+
+    <div class="main_text">
+      <h3>
+        SNEAKER COMPANY
+      </h3>
+
+      <h1>
+        Fall Limited Edition Sneakers
+      </h1>
+
+      <p>
+        These low-profile sneakers are your perfect casual wear companion. Featuring a 
+        durable rubber outer sole, they’ll withstand everything the weather can offer.
+      </p>
+
+      <div class="main_text_amount">
+        <div class="main_text_amount_frame">
+          <h1 class="price">
+            $125.00
+          </h1>
+
+          <h4 class="discount">
+            50%
+          </h4>
+        </div>
+
+        <h3 class="cancelledPrice">
+          $250.00
+        </h3>
+      </div>
+
+      <div class="main_text_number">
+        <div class="main_text_number_count">
+          <span><img class="minus" src="./images/icon-minus.svg"></span>
+          <span class="number">1</span>
+          <span><img class="plus" src="./images/icon-plus.svg"></span>
+        </div>
+
+        <div class="button" type="button">
+          <img src="./images/icon-cart.svg" alt="cart">
+          <p>Add to cart</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="./app.js/script.js"></script>
+</body>
+</html>
